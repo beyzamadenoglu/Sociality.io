@@ -3,7 +3,7 @@ body {
 }
 .sidebar {
     height: 100vh;
-    width: 19vw;
+    width: 17vw;
     background-color: #31363b;
     text-transform: uppercase;
 }
@@ -30,6 +30,10 @@ body {
     padding: 0;
     margin: 0;
     text-align: center;
+}
+
+.content-area {
+    padding: 0px 3vw;
 }
 
 .company-container li a {
@@ -78,7 +82,7 @@ body {
 .sidebar a {
     text-decoration: none;
     color: #ffff;
-    font-size: 18px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     margin: 0;
@@ -114,11 +118,12 @@ button {
   }
 
 .status-text {
-    color: #303030;
+    color: #444444;
 }
 
 .status-bar {
     height: 75px;
+    padding-left: 20px;
 }
 
 .status-bar li {
@@ -134,17 +139,20 @@ button {
   }
   
   .card-item-container {
-    width: 24vw;
+    width: 24.3vw;
+    margin-right: 2vw;
     background-color: #FFF;
     border-radius: 5px;
+    border: 1px solid #E8E9EF;
     display: flex;
-    margin: 10px 20px;
   }
 
   .card-item-container .vertical-badge {
     height: 100%;
-    width: 12%;
+    width: 15%;
     background-color: #3BC083;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     color: #FFF;
     text-align: center;
     display: flex;
@@ -154,19 +162,73 @@ button {
 
 .card-image {
     width: 100%;
-    text-align: center;
 }  
 
 .card-image img {
-   width: 15vw;
+   width: 100%;
    height: auto;
 }
 
 .card-item-content-container {
     width: 100%;
+    margin: 20px 25px;
+    color: #a6a6a6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-item-content-container a {
+    color: #77bff1;
 }
 
 .card-interactions {
     display: flex;
-    justify-content: space-evenly;
+    margin: 10px 0px;
+}
+
+.card-interactions span {
+    margin: 0px 0px 0px 10px;
+    height: 1em;
+    vertical-align: middle;
+    display: flex;
+    font-size: 1em;
+    line-height: 1em;
+}
+
+.card-interactions p {
+    margin: 0;
+    height: 1em;
+    vertical-align: middle;
+    font-size: 1em;
+    line-height: 1em;
+    font-family: sans-serif;
+}
+
+.card-header p {
+    color: #979797;
+    font: raleway-bold;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin: 0px 0px 14px 0px;
+}
+
+.card-date {
+    font-size: 1.1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-date p {
+    margin-top: 0px;
+}
+
+.card-icons {
+    fill: #d3d3d3;
+    height: 1.1em;
+    margin-right: 12px;
+}
+
+.publish-row {
+    display: inline-flex;
 }

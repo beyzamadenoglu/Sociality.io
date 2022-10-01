@@ -1,58 +1,76 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons"
-import { faThumbsUp, faMessage, faEye } from "@fortawesome/free-regular-svg-icons"
-import { faShareNodes, faTrash } from "@fortawesome/free-solid-svg-icons"
+import Moment from 'moment';
 import DefaultImage from '../contants/Images/no-post-image.png';
 import ReactImageFallback from "react-image-fallback";
+import { CancelIcon, CommentIcon, DeleteIcon, FavIcon, MoreIcon, ShareIcon, ViewsIcon, LikeIcon } from '../assets/Icons/index';
 
 function PostCard(data) {
+  Moment.locale('en');
+  var regex = new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/);
+  var published_at = data.data.published_at
+  published_at = Moment(published_at).format('d MMMM YYYY - HH:mm');
+
+
+  if (data.data.entry.message.match(regex) != null) {
+    let link = data.data.entry.message.match(regex)[0]
+    var message = <p>{data.data.entry.message.replace(link, "")} <a href={link}>{link}</a></p>
+  } else {
+    var message = <p>{data.data.entry.message}</p>
+  }
+
   return (
     <div className="card-item-container">
       <div className="vertical-badge">
         <FontAwesomeIcon icon={faFacebookF} />
       </div>
       <div className="card-item-content-container">
-        <div className="card-date">
-          <FontAwesomeIcon icon={faTrash} />
+        <div>
+          <div className="card-date">
+            <p>{published_at}</p>
+            <div>
+              <CancelIcon />
+              <DeleteIcon />
+              <MoreIcon />
+            </div>
+          </div>
 
-        </div>
+          <div className="card-header">
+            {message}
+          </div>
+          <div className="card-actions">
 
+          </div>
 
-        <div className="card-header">
+          <div className="card-image">
 
-        </div>
-        <div className="card-actions">
-
-        </div>
-
-        <div className="card-image">
-
-          <ReactImageFallback src={data.data.entry.image[0]} alt="ok"
-            fallbackImage={DefaultImage}
-            initialImage={DefaultImage} />
+            <ReactImageFallback src={data.data.entry.image[0]} alt="ok"
+              fallbackImage={DefaultImage}
+              initialImage={DefaultImage} />
+          </div>
         </div>
         <div className="card-interactions">
 
 
-          <span>
-            <FontAwesomeIcon icon={faThumbsUp} />
-            {10 + Math.floor((Math.random() * (90)))}
+          <span style={{ font: 'Raleway' }}>
+            <LikeIcon />
+            <p>{10 + Math.floor((Math.random() * (90)))}</p>
           </span>
 
           <span>
-            <FontAwesomeIcon icon={faMessage} />
-            {10 + Math.floor((Math.random() * (90)))}
+            <CommentIcon />
+            <p>{10 + Math.floor((Math.random() * (90)))}</p>
           </span>
 
           <span>
-            <FontAwesomeIcon icon={faShareNodes} />
-            {10 + Math.floor((Math.random() * (90)))}
+            <ShareIcon />
+            <p>{10 + Math.floor((Math.random() * (90)))}</p>
           </span>
 
           <span>
-            <FontAwesomeIcon icon={faEye} />
-            {10 + Math.floor((Math.random() * (90)))}
+            <ViewsIcon />
+            <p>{10 + Math.floor((Math.random() * (90)))}</p>
           </span>
 
         </div>
