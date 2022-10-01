@@ -1,9 +1,23 @@
 body {
   margin: 0;
+  background: #F4F7F8;
 }
 
 .App {
   text-align: center;
+}
+
+.main-container {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: auto;
+  display: flex;
+}
+
+.content-area {
+  height: auto;
+  width: 81vw;
 }
 
 .App-logo {

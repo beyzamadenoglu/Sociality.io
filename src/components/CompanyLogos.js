@@ -1,44 +1,46 @@
 import React from 'react'
+import OrganicLogo from '../assets/organic.png';
 import GoLogo from '../assets/go-logo.png';
 import WellnessCenterLogo from '../assets/wellness-center.png';
-import GoCompanyLogo from '../assets/go-company.psb.png';
+import YourLogo from '../assets/your-logo.png';
+import GoCompanyLogo from '../assets/go-company.png';
 import TechLogo from '../assets/tech-logo.png';
 
 
 export const CompanyLogos = [
     {
-        alt: 'Well',
-        image: WellnessCenterLogo,
+        alt: 'Organic Company',
+        image: OrganicLogo,
        
     },
 
     {
-        alt: 'Summary',
+        alt: 'Go ',
         image: GoLogo,
 
     },
 
     {
         alt: 'Publish',
-        image: GoCompanyLogo,
+        image: YourLogo,
         
     },
 
     {
-        alt: 'Engage',
-        image: TechLogo,
+        alt: 'Go Company',
+        image: GoCompanyLogo,
     
     },
 
     {
         alt: 'Listen',
-        image: GoLogo,
+        image: WellnessCenterLogo,
        
     },
 
     {
         alt: 'Report',
-        image: GoLogo,
+        image: TechLogo,
        
     },
 

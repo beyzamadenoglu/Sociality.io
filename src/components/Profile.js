@@ -3,7 +3,7 @@ import ProfileImage from '../contants/Images/Image/Profile.png';
 
 const Profile = () => {
   return (
-    <div>
+    <div className="profile-picture">
         <img src={ProfileImage} alt="Profile"></img>
     </div>
   )

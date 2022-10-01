@@ -40,7 +40,7 @@ body {
     background-color: #393d42;
 }
 
-.active-border {
+.active-company .selected-border {
     position: absolute;
     margin-top: 10px;
     height: 40px;
@@ -48,6 +48,10 @@ body {
     background: #f55661;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+.inactive-company .company-logo {
+    opacity: 0.24;
 }
 
 .company-logo {
@@ -109,13 +113,60 @@ button {
     font-size: 1.6rem;
   }
 
-.status-text{
-    color: black;
+.status-text {
+    color: #303030;
 }
 
-.status-bar{
+.status-bar {
+    height: 75px;
+}
+
+.status-bar li {
+    float:left; 
+    margin-right: 50px;
+}
+
+
+.profile-picture {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+  
+  .card-item-container {
+    width: 24vw;
+    background-color: #FFF;
+    border-radius: 5px;
+    display: flex;
+    margin: 10px 20px;
+  }
+
+  .card-item-container .vertical-badge {
+    height: 100%;
+    width: 12%;
+    background-color: #3BC083;
+    color: #FFF;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+.card-image {
+    width: 100%;
+    text-align: center;
+}  
+
+.card-image img {
+   width: 15vw;
+   height: auto;
+}
+
+.card-item-content-container {
+    width: 100%;
+}
+
+.card-interactions {
     display: flex;
     justify-content: space-evenly;
-    vertical-align: top;
-    width: 100%;
 }

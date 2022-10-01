@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { SidebarItems } from './SidebarItems';
 import Logo from '../contants/Images/SocialityLogo'
@@ -6,6 +6,12 @@ import { CompanyLogos } from "../components/CompanyLogos";
 import './Sidebar.css'
 
 function Sidebar() {
+
+    const [activeCompany, setActiveCompany] = useState(0);
+
+    function selectCompany(index) {
+        setActiveCompany(index);
+    }
 
     return (
         <>
@@ -15,16 +21,22 @@ function Sidebar() {
                 </div>
                 <div className="sidebar-content-container">
                     <div className="company-container">
-                        <ul>
+                        <ul id="company-list">
                             {CompanyLogos.map((item, index) => {
                                 return (
-                                    <Link>
-                                        <li key={index}>
-                                            <div className="active-border selected-logo">
-                                            </div>
-                                            <img className="company-logo" src={item.image} alt={item.alt} />
-                                        </li>
-                                    </Link>
+                                    <>
+                                        {index === activeCompany ? (
+                                            <li id={"company-" + index} className="active-company" onClick={() => selectCompany(index)}>
+                                                <div className="selected-border"></div>
+                                                <img className="company-logo" src={item.image} alt={item.alt} />
+                                            </li>
+
+                                        ) : (
+                                            <li id={"company-" + index} className="inactive-company" onClick={() => selectCompany(index)}>
+                                                <div className="selected-border"></div>
+                                                <img className="company-logo" src={item.image} alt={item.alt} />
+                                            </li>)}
+                                    </>
                                 )
                             })}
                         </ul>
