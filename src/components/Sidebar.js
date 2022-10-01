@@ -4,10 +4,24 @@ import { SidebarItems } from './SidebarItems';
 import Logo from '../contants/Images/SocialityLogo'
 import { CompanyLogos } from "../components/CompanyLogos";
 import './Sidebar.css'
+import {
+    Accordion,
+    AccordionBody,
+    AccordionHeader,
+    AccordionItem,
+} from 'reactstrap';
 
 function Sidebar() {
 
     const [activeCompany, setActiveCompany] = useState(0);
+    const [open, setOpen] = useState('1');
+    const toggle = (id) => {
+        if (open === id) {
+            setOpen();
+        } else {
+            setOpen(id);
+        }
+    };
 
     function selectCompany(index) {
         setActiveCompany(index);
@@ -43,19 +57,27 @@ function Sidebar() {
                     </div>
 
                     <div className="feature-container">
-                        <ul>
+                        <Accordion open={open} toggle={toggle}>
+
                             {SidebarItems.map((item, index) => {
                                 return (
-                                    <Link>
-                                        <li key={index} className={item.name}>
-                                            {item.icon}
+                                    <AccordionItem>
+                                        <AccordionHeader targetId={index}>{item.icon}
                                             <button>{item.title}
                                             </button>
-                                        </li>
-                                    </Link>
+                                        </AccordionHeader>
+                                        <AccordionBody accordionId={index}>
+                                            <strong>This is the first item&#39;s accordion body.</strong>
+                                            You can modify any of this with custom CSS or overriding our default
+                                            variables. It&#39;s also worth noting that just about any HTML can
+                                            go within the <code>.accordion-body</code>, though the transition
+                                            does limit overflow.
+                                        </AccordionBody>
+
+                                    </AccordionItem>
                                 )
                             })}
-                        </ul>
+                        </Accordion>
                     </div>
 
                 </div>
