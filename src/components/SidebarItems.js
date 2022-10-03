@@ -7,7 +7,7 @@ export const SidebarItems = [
         title: 'Notifications',
         icon: <Notifications />,
         name: 'nav-text',
-        child: ['Notification', 'Notification'],
+        child: ['Notification', 'Notifications'],
         number: 29,
         expand: false
     },
@@ -16,7 +16,7 @@ export const SidebarItems = [
         title: 'Summary',
         icon: <Summary />,
         name: 'nav-text',
-        child: ['Summary', 'Summary']
+        child: ['Summary', 'Sum']
     },
 
     {
@@ -30,21 +30,21 @@ export const SidebarItems = [
         title: 'Engage',
         icon: <Engage />,
         name: 'nav-text',
-        child: ['Engage', 'Engage']
+        child: ['Engage', 'Engages']
     },
 
     {
         title: 'Listen',
         icon: <Listen />,
         name: 'nav-text',
-        child: ['Listen', 'Listen']
+        child: ['Listen', 'Listens']
     },
 
     {
         title: 'Report',
         icon: <Report />,
         name: 'nav-text',
-        child: ['Report', 'Report']
+        child: ['Report', 'Reports']
     },
 
 ]

@@ -12,7 +12,7 @@ import {
 
 function Sidebar() {
 
-    const [activeCompany, setActiveCompany] = useState(0);
+    const [activeCompany, setActiveCompany] = useState(3);
     const [open, setOpen] = useState('1');
     const toggle = (id) => {
         if (open === id) {
@@ -49,17 +49,22 @@ function Sidebar() {
                             {CompanyLogos.map((item, index) => {
                                 return (
                                     <>
+
+
                                         {index === activeCompany ? (
                                             <li id={"company-" + index} className="active-company" onClick={() => selectCompany(index)}>
                                                 <div className="selected-border"></div>
                                                 <img className="company-logo" src={item.image} alt={item.alt} />
+                                                {index === 0 ? <span className="company-notification">9</span> : <></>}
                                             </li>
 
                                         ) : (
                                             <li id={"company-" + index} className="inactive-company" onClick={() => selectCompany(index)}>
                                                 <div className="selected-border"></div>
                                                 <img className="company-logo" src={item.image} alt={item.alt} />
+                                                {index == 0 ? <span className="company-notification">9</span> : <></>}
                                             </li>)}
+
                                     </>
                                 )
                             })}
