@@ -1,5 +1,5 @@
 import React from 'react'
-import Notifications from '../contants/Images/Notifications';
+import { Engage, Listen, Notifications, Publish, Report, Summary } from '../contants/Images/index';
 
 
 export const SidebarItems = [
@@ -7,44 +7,44 @@ export const SidebarItems = [
         title: 'Notifications',
         icon: <Notifications />,
         name: 'nav-text',
-        child: ['', ''],
+        child: ['Notification', 'Notification'],
         number: 29,
         expand: false
     },
 
     {
         title: 'Summary',
-        icon: <Notifications />,
+        icon: <Summary />,
         name: 'nav-text',
-        child: ['', '']
+        child: ['Summary', 'Summary']
     },
 
     {
         title: 'Publish',
-        icon: <Notifications />,
+        icon: <Publish />,
         name: 'nav-text',
         child: ['Compose', 'Feed']
     },
 
     {
         title: 'Engage',
-        icon: <Notifications />,
+        icon: <Engage />,
         name: 'nav-text',
-        child: ['', '']
+        child: ['Engage', 'Engage']
     },
 
     {
         title: 'Listen',
-        icon: <Notifications />,
+        icon: <Listen />,
         name: 'nav-text',
-        child: ['', '']
+        child: ['Listen', 'Listen']
     },
 
     {
         title: 'Report',
-        icon: <Notifications />,
+        icon: <Report />,
         name: 'nav-text',
-        child: ['', '']
+        child: ['Report', 'Report']
     },
 
 ]

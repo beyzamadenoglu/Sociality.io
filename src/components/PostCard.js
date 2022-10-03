@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF } from "@fortawesome/free-brands-svg-icons"
+import { faTwitter, faInstagram, faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import Moment from 'moment';
 import DefaultImage from '../contants/Images/no-post-image.png';
 import ReactImageFallback from "react-image-fallback";
@@ -20,10 +20,21 @@ function PostCard(data) {
     var message = <p>{data.data.entry.message}</p>
   }
 
+  const account = data.data.account.channel;
+  let logo;
+  if (account === 'twitter') {
+    logo = <FontAwesomeIcon icon={faTwitter} />
+  } else if (account === 'facebook') {
+    logo = <FontAwesomeIcon icon={faFacebookF} />
+  }
+  else {
+    logo = <FontAwesomeIcon icon={faInstagram} />
+  }
+
   return (
-    <div className="card-item-container">
+    <div className="card-item-container">  
       <div className="vertical-badge">
-        <FontAwesomeIcon icon={faFacebookF} />
+      {logo}
       </div>
       <div className="card-item-content-container">
         <div>
@@ -54,7 +65,8 @@ function PostCard(data) {
 
 
           <span style={{ font: 'Raleway' }}>
-            <LikeIcon />
+
+            {(data.data.account.channel) === 'twitter' ? <FavIcon /> : <LikeIcon/> }
             <p>{10 + Math.floor((Math.random() * (90)))}</p>
           </span>
 

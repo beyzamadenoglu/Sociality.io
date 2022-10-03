@@ -1,10 +1,48 @@
 body {
     font-family: 'Raleway', sans-serif;
 }
+
+.accordion,
+.accordion-button,
+.accordion-header,
+.accordion-item,
+.accordion-body {
+    border-radius: unset !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+
+.accordion-triangle {
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #f55661;
+    position: absolute;
+    margin-left: 10px;
+
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.2' viewBox='0 0 15 15' width='15' height='15'%3E%3Cdefs%3E%3CclipPath clipPathUnits='userSpaceOnUse' id='cp1'%3E%3Cpath d='m-239-120h1538v1206h-1538z'/%3E%3C/clipPath%3E%3C/defs%3E%3Cstyle%3E.a%7Bfill:%231d1d1d%7D%3C/style%3E%3Cg clip-path='url(%23cp1)'%3E%3Cpath class='a' d='m8.2 14.2h-1.2v-6.1h-6.2v-1.2h6.2v-6.2h1.2v6.2h6.2v1.2h-6.2z'/%3E%3C/g%3E%3C/svg%3E") !important;
+    transform: scale(0.75) !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.2' viewBox='0 0 14 4' width='14' height='4'%3E%3Cdefs%3E%3CclipPath clipPathUnits='userSpaceOnUse' id='cp1'%3E%3Cpath d='m-240-176h1538v1206h-1538z'/%3E%3C/clipPath%3E%3C/defs%3E%3Cstyle%3E.a%7Bfill:%231d1d1d%7D%3C/style%3E%3Cg clip-path='url(%23cp1)'%3E%3Cpath class='a' d='m1 2h11v1h-11z'/%3E%3C/g%3E%3C/svg%3E") !important;
+    transform: scale(0.75) !important;
+}
+
+.accordion-button:not(.collapsed) svg * {
+    fill: white !important;
+}
+
 .sidebar {
     width: 17vw;
     background-color: #31363b;
     text-transform: uppercase;
+    min-height: 100vh;
 }
 
 .sidebar-content-container {
@@ -39,7 +77,8 @@ body {
     width: 5vw;
 }
 
-.company-container li:hover, .company-container li:hover {
+.company-container li:hover,
+.company-container li:hover {
     background-color: #393d42;
 }
 
@@ -65,7 +104,7 @@ body {
 }
 
 .feature-container {
-    width: 14vw;
+    width: 12vw;
     background-color: #393d42;
     height: 100%;
 }
@@ -78,7 +117,8 @@ body {
     height: 60px;
 }
 
-.sidebar button {
+.sidebar button,
+.sidebar a {
     text-decoration: none;
     color: #ffff;
     font-size: 16px;
@@ -88,14 +128,90 @@ body {
     padding: 0;
     border: none;
     border-radius: unset;
-    background:  #393d42 ;
+    background: #393d42;
     line-height: 3;
+}
 
+.accordion-body ul {
+    list-style-position: inside;
+}
+
+.accordion-body a {
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+    font-family: Raleway;
+}
+
+.accordion-body ul a li {
+    background: #32363a;
+    color: #fff;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: smaller;
+    text-transform: capitalize;
+    padding: 10px 15px;
+}
+
+.accordion-body ul a li span {
+    margin-left: -1em;
+    vertical-align: super;
+}
+
+.accordion-body ul>.active>li {
+    color: #f55661;
+}
+
+.accordion-body li:hover {
+    background-color: #32363a !important;
+    color: #f55661;
+    cursor: pointer;
 }
 
 .accordion-item {
     border: none !important;
-   
+    border-radius: none !important;
+}
+
+.accordion-item:active {
+    background: #32363a;
+    border-radius: none !important;
+}
+
+.accordion-button span {
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    font-weight: 300;
+}
+
+.accordion-button span svg {
+    scale: 0.85;
+}
+
+.accordion-button span svg {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+.accordion-button:not(.collapsed) {
+    background: #f55661 !important;
+    box-shadow: unset;
+    color: white !important;
+}
+
+button:focus:not(:focus-visible),
+button:active {
+    background: #f55661 !important;
+    box-shadow: unset;
+    color: white !important;
+}
+
+.accordion-body {
+    padding: 0px !important;
+    margin: 0px !important;
+    background-color: #d3d3d3;
 }
 
 .feature-container ul {
@@ -120,12 +236,12 @@ body {
 button {
     all: unset;
     cursor: pointer;
-  }
+}
 
 
-  li::marker {
+li::marker {
     font-size: 1.6rem;
-  }
+}
 
 .status-text {
     color: #444444;
@@ -137,7 +253,7 @@ button {
 }
 
 .status-bar li {
-    float:left; 
+    float: left;
     margin-right: 50px;
 }
 
@@ -146,18 +262,18 @@ button {
     position: absolute;
     top: 20px;
     right: 30px;
-  }
-  
-  .card-item-container {
+}
+
+.card-item-container {
     width: 24.3vw;
     margin-right: 2vw;
     background-color: #FFF;
     border-radius: 5px;
     border: 1px solid #E8E9EF;
     display: flex;
-  }
+}
 
-  .card-item-container .vertical-badge {
+.card-item-container .vertical-badge {
     height: 100%;
     width: 15%;
     background-color: #3BC083;
@@ -168,15 +284,15 @@ button {
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
+}
 
 .card-image {
     width: 100%;
-}  
+}
 
 .card-image img {
-   width: 100%;
-   height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .card-item-content-container {
@@ -194,7 +310,7 @@ button {
 
 .card-interactions {
     display: flex;
-    margin: 10px 0px;
+    margin: 15px 0px 0px;
 }
 
 .card-interactions span {
@@ -208,23 +324,25 @@ button {
 
 .card-interactions p {
     margin: 0;
-    height: 1em;
+    height: 1.1em;
     vertical-align: middle;
-    font-size: 1em;
-    line-height: 1em;
+    font-size: 0.8em;
+    line-height: 1.4em;
     font-family: sans-serif;
+    margin-right: 0.2em;
 }
 
 .card-header p {
     color: #979797;
-    font: raleway-bold;
-    font-weight: 600;
-    font-size: 0.9em;
+    font-family: Raleway;
+    font-weight: bold;
+    font-size: 0.7em;
     margin: 0px 0px 14px 0px;
 }
 
 .card-date {
-    font-size: 1.1em;
+    font-size: 0.75em;
+    font-weight: 300;
     display: flex;
     justify-content: space-between;
 }
@@ -234,11 +352,31 @@ button {
 }
 
 .card-icons {
-    fill: #d3d3d3;
+    fill: #d3d3d3 !important;
     height: 1.1em;
     margin-right: 12px;
 }
 
 .publish-row {
     display: inline-flex;
+    padding-bottom: 25px;
+}
+
+.publish-row-date {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    color: #9fa0a0;
+    font-size: 22px;
+}
+
+.a-svg {
+    fill: #d9525c;
+}
+
+.b-svg {
+    fill: #495058;
+}
+
+.view {
+    font-size: x-large;
+    margin-top: -5px;
 }

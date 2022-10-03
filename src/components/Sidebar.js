@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 import { SidebarItems } from './SidebarItems';
 import Logo from '../contants/Images/SocialityLogo'
 import { CompanyLogos } from "../components/CompanyLogos";
@@ -62,18 +62,27 @@ function Sidebar() {
                             {SidebarItems.map((item, index) => {
                                 return (
                                     <AccordionItem>
-                                        <AccordionHeader targetId={index}>{item.icon}
-                                            <button>{item.title}
-                                            </button>
+                                        <AccordionHeader targetId={index}>
+                                            <span>
+                                                {item.icon}
+                                                {item.title}
+                                            </span>
                                         </AccordionHeader>
                                         <AccordionBody accordionId={index}>
-                                            <strong>This is the first item&#39;s accordion body.</strong>
-                                            You can modify any of this with custom CSS or overriding our default
-                                            variables. It&#39;s also worth noting that just about any HTML can
-                                            go within the <code>.accordion-body</code>, though the transition
-                                            does limit overflow.
+                                            <div className="accordion-triangle"></div>
+                                            <ul>
+                                                {item.child.map((elem) => {
+                                                    return (
+                                                        <>
+                                                            <NavLink to={`/${elem}`}  
+                                                                    style={(isActive) => ({ color: isActive ? "green!important" : "red!important" })} >
+                                                                <li><span>{elem}</span></li>
+                                                            </NavLink>
+                                                        </>
+                                                    )
+                                                })}
+                                            </ul>
                                         </AccordionBody>
-
                                     </AccordionItem>
                                 )
                             })}

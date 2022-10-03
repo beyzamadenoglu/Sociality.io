@@ -1,22 +1,17 @@
 import React from 'react'
 import Sidebar from '../components/Sidebar';
-import Status from '../components/Statusbar';
-import Profile from '../components/Profile';
-import Publishes from '../components/Publishes';
 
-const HomePage = () => {
+const HomePage = ({ children }) => {
   return (
     <>
       <div className="main-container">
         <Sidebar />
         <div className="content-area">
-          <Status />
-          <Profile/>
-          <Publishes />
+          {children}
         </div>
       </div>
     </>
   )
 }
 
-export default HomePage
+export default HomePage;
