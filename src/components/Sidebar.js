@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { NavLink } from "react-router-dom";
 import { SidebarItems } from './SidebarItems';
-import Logo from '../contants/Images/SocialityLogo'
+import Logo from '../assets/Images/SocialityLogo'
 import { CompanyLogos } from "../components/CompanyLogos";
-import './Sidebar.css'
 import {
     Accordion,
     AccordionBody,

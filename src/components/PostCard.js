@@ -2,9 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faInstagram, faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import Moment from 'moment';
-import DefaultImage from '../contants/Images/no-post-image.png';
+import DefaultImage from '../assets/Images/no-post-image.png';
 import ReactImageFallback from "react-image-fallback";
-import { CancelIcon, CommentIcon, DeleteIcon, FavIcon, MoreIcon, ShareIcon, ViewsIcon, LikeIcon } from '../assets/Icons/index';
+import { CancelIcon, CommentIcon, DeleteIcon, FavIcon, MoreIcon, ShareIcon, ViewsIcon, LikeIcon, ApproveIcon, } from '../assets/Icons/index';
 
 function PostCard(data) {
   Moment.locale('en');
@@ -31,9 +31,24 @@ function PostCard(data) {
     logo = <FontAwesomeIcon icon={faInstagram} />
   }
 
+  const status = data.data.status;
+  let svg, color;
+  if (status === 3) {
+    svg = <CancelIcon />
+    color =  'published';
+  } else if (status === 0) {
+    svg = <ApproveIcon />
+    color = 'approval'
+  }
+  else if(status === 1){
+    svg = <></>
+    color = 'scheduled'
+  }
+
+
   return (
     <div className="card-item-container">  
-      <div className="vertical-badge">
+      <div className={`${color} vertical-badge`}>
       {logo}
       </div>
       <div className="card-item-content-container">
@@ -41,7 +56,7 @@ function PostCard(data) {
           <div className="card-date">
             <p>{published_at}</p>
             <div>
-              <CancelIcon />
+             { svg }
               <DeleteIcon />
               <MoreIcon />
             </div>

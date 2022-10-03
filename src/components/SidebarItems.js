@@ -1,5 +1,5 @@
 import React from 'react'
-import { Engage, Listen, Notifications, Publish, Report, Summary } from '../contants/Images/index';
+import { Engage, Listen, Notifications, Publish, Report, Summary } from '../assets/Images/index';
 
 
 export const SidebarItems = [

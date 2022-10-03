@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Empty() {
+function Default() {
   return (
     <div>Hello, world!</div>
   )
 }
 
-export default Empty
+export default Default;

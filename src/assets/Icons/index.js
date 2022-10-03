@@ -6,5 +6,6 @@ import MoreIcon from './MoreIcon';
 import ShareIcon from './ShareIcon';
 import ViewsIcon from './ViewsIcon';
 import LikeIcon from './LikeIcon';
+import ApproveIcon from './ApproveIcon';
 
-export { CancelIcon, CommentIcon, DeleteIcon, FavIcon, MoreIcon, ShareIcon, ViewsIcon, LikeIcon  };
+export { CancelIcon, CommentIcon, DeleteIcon, FavIcon, MoreIcon, ShareIcon, ViewsIcon, LikeIcon, ApproveIcon  };

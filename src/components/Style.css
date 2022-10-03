@@ -263,7 +263,9 @@ li::marker {
     top: 20px;
     right: 30px;
 }
-
+.profile-picture img {
+    border-radius: 50px;
+}
 .card-item-container {
     width: 24.3vw;
     margin-right: 2vw;
@@ -276,7 +278,6 @@ li::marker {
 .card-item-container .vertical-badge {
     height: 100%;
     width: 15%;
-    background-color: #3BC083;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     color: #FFF;
@@ -286,6 +287,17 @@ li::marker {
     justify-content: center;
 }
 
+.scheduled {
+    background-color: #3BC083;
+}
+
+.approval {
+    background-color: #f7bf38;
+}
+
+.published {
+    background-color: #f7bf38;
+}
 .card-image {
     width: 100%;
 }

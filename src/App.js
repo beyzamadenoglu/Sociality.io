@@ -1,7 +1,8 @@
 import './App.css';
 import React from 'react';
-import Router from "./Rooter/router";
+import Router from "./Router/router";
 import HomePage from "./pages/HomePage";
+import "../src/components/Style.css";
 
 
 function App() {
