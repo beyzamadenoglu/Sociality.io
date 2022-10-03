@@ -25,6 +25,17 @@ function Sidebar() {
     function selectCompany(index) {
         setActiveCompany(index);
     }
+    function NotificationBadge(title) {
+        if (title.title === 'Notifications') {
+            return (
+                <span className="notifications-badge">24</span>
+            )
+        } else {
+            return (
+                <></>
+            )
+        }
+    }
 
     return (
         <>
@@ -65,6 +76,7 @@ function Sidebar() {
                                             <span>
                                                 {item.icon}
                                                 {item.title}
+                                                <NotificationBadge title={item.title} />
                                             </span>
                                         </AccordionHeader>
                                         <AccordionBody accordionId={index}>
@@ -73,8 +85,8 @@ function Sidebar() {
                                                 {item.child.map((elem) => {
                                                     return (
                                                         <>
-                                                            <NavLink to={`/${elem}`}  
-                                                                    style={(isActive) => ({ color: isActive ? "green!important" : "red!important" })} >
+                                                            <NavLink to={`/${elem}`}
+                                                                style={(isActive) => ({ color: isActive ? "green!important" : "red!important" })} >
                                                                 <li><span>{elem}</span></li>
                                                             </NavLink>
                                                         </>

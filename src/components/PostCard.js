@@ -35,28 +35,28 @@ function PostCard(data) {
   let svg, color;
   if (status === 3) {
     svg = <CancelIcon />
-    color =  'published';
+    color = 'published';
   } else if (status === 0) {
     svg = <ApproveIcon />
-    color = 'approval'
+    color = 'approval';
   }
-  else if(status === 1){
+  else if (status === 1) {
     svg = <></>
-    color = 'scheduled'
+    color = 'scheduled';
   }
 
 
   return (
-    <div className="card-item-container">  
+    <div className="card-item-container">
       <div className={`${color} vertical-badge`}>
-      {logo}
+        {logo}
       </div>
       <div className="card-item-content-container">
         <div>
           <div className="card-date">
             <p>{published_at}</p>
             <div>
-             { svg }
+              {svg}
               <DeleteIcon />
               <MoreIcon />
             </div>
@@ -81,7 +81,7 @@ function PostCard(data) {
 
           <span style={{ font: 'Raleway' }}>
 
-            {(data.data.account.channel) === 'twitter' ? <FavIcon /> : <LikeIcon/> }
+            {(data.data.account.channel) === 'twitter' ? <FavIcon /> : <LikeIcon />}
             <p>{10 + Math.floor((Math.random() * (90)))}</p>
           </span>
 
