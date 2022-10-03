@@ -365,8 +365,12 @@ li::marker {
 
 .card-icons {
     fill: #d3d3d3 !important;
-    height: 1.1em;
+    height: 1.4em;
     margin-right: 12px;
+}
+
+.card-interactions .card-icons {
+    height: 1.1em;
 }
 
 .publish-row {
